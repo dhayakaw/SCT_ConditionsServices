@@ -1,0 +1,1082 @@
+2014-12-07 Shaun Roe
+	* Finish RodVetoSvc, test ok
+	* tag as SCT_ConditionsServices-00-04-27
+
+2014-12-01 Daiki Hayakawa
+	* update RodVetoSvc
+
+2014-11-21 Shaun Roe
+	* update RodVetoSvc test job options 
+
+2014-11-20 Shaun Roe
+	* fix reading module folder; now (run2, coool vector payload used) the Channel number is equal to serial number
+	* tag as SCT_ConditionsServices-00-04-26
+
+2014-11-19 Shaun Roe (obo Daiki Hayakawa)
+	* add the RodVetoSvc (compiles, test job runs)
+
+2014-10-22 Shaun Roe
+	* Correct coverity warnings
+	* tag as SCT_ConditionsServices-00-04-25
+
+2014-10-22 Shaun Roe
+	* Update TDaq enabled service for new numbers of rods and name formats
+	* tag as SCT_ConditionsServices-00-04-24
+
+2014-10-22 Shaun Roe
+	* Update Configuration conditions service for CONDBR2: different folder names and types
+	* tag as SCT_ConditionsServices-00-04-23
+2014-10-15  John Chapman
+	* cmt/requiremsnts - fix checkreq warning.
+	* src/SCT_ReadCalibDataSvc.cxx - fix minor build warnings.
+	* tag as SCT_ConditionsServices-00-04-22
+
+2014-09-13 Rolf Seuster
+	* remove one VERBOSE printout, it conflicts with COOL?CORAL ABI 3
+	* tag as SCT_ConditionsServices-00-04-21
+
+2014-09-08 Shaun Roe
+	* relegate INFO messages in the readout tool to DEBUG
+	* tag as SCT_ConditionsServices-00-04-20
+
+2014-09-03 Shaun Roe
+	* Add the sensors service to give crystal orientation, On behalf of Justas Zalieckas
+2014-09-01 Shaun Roe
+	* Update the TdaqEnabledSvc to cope with run2 folder name, which is different.
+	* Tag as SCT_ConditionsServices-00-04-19
+2014-07-04 Shaun Roe
+	* remove redundant references (only #includes) to TrkPrimitives/LocalPosition
+
+2013-11-28 Matthew Klein
+	* Added IBL setting to SCT_SiliconConditionsSvc
+	* Tag as SCT_ConditionsServices-00-04-15-01
+
+2012-12-13  Per Daniel Conny Johansson
+	* Fix coverity defects 68983 and 68984
+	* Added a more detailed charge trapping model
+	* Tag as SCT_ConditionsServices-00-04-15
+
+2012-11-13  Per Daniel Conny Johansson
+	* RandFlat now CLHEP::RandFlat
+	* Tag as SCT_ConditionsServices-00-04-14
+
+2012-11-03 Rolf Seuster
+	* Tag as SCT_ConditionsServices-00-04-13
+	* Fix compilation failure with gcc47
+
+2012-10-24 Shaun Roe
+	* Monitor conditions updated to include local caching
+	* Fixes bug seen by Pat Ward when forcing folder overrides
+
+2012-10-19  Per Daniel Conny Johansson
+	* Charge Trapping code now CLHEP 2.1.2.3 compatible
+	* Tag as SCT_ConditionsServices-00-04-12
+
+2012-10-15  Per Daniel Conny Johansson
+	* Fixed the requirement file for SCT_ChargeTrappingSvc
+	* Tag as SCT_ConditionsServices-00-04-11
+
+2012-09-10 Nick Barlow
+	* Added function HVisOn to interface class
+	ISCT_ByteStreamErrorsSvc (was already implemented in concrete
+	classes, should have been there all along!)
+	* Tag as SCT_ConditionsServices-00-04-10
+
+2012-08-31  Per Daniel Conny Johansson
+	* Added SCT_ChargeTrappingSvc, and its helpers SCT_RadDamageSummarySvc and SCT_ElectricFieldTool 
+	* tag as SCT_ConditionsServices-00-04-08
+	
+2012-06-24 Shaun Roe
+	* Fix floating point overflow due to input having numbers 1e+65; bug 95482
+	* tag as SCT_ConditionsServices-00-04-07
+2012-06-06 Shaun Roe
+	* New geomodel interfaces, files patched by Vakho Tsulaia
+	* tag as SCT_ConditionsServices-00-04-06
+
+2012-04-29 Shaun Roe
+	* Fix for coverity bugs 16161, 16163, 16169
+	* tag as SCT_ConditionsServices-00-04-04
+2012-04-03 Nick Barlow
+	* Merge -00-04-02-02 branch back into trunk
+	* tag as SCT_ConditionsServices-00-04-03
+
+2012-03-15  Per Daniel Conny Johansson
+	* Improved SCT_ReadCalibDataSvc, faster and easier to ignore, or change, defect limits
+	* tag as SCT_ConditionsServices-00-04-02-02
+	
+2011-09-10 Shaun Roe
+	* Try to speed up SCT_MonitorConditionsSvc::getList 
+	* http://savannah.cern.ch/bugs/?86356
+
+2011-06-01 Shaun Roe
+	* Introduce a cached version of the summary service
+	* tag as SCT_ConditionsServices-00-04-00
+ 
+2011-05-09 Shaun Roe
+	* Remove/protect  MSG DEBUG statements
+	* tag as SCT_ConditionsServices-00-03-98
+
+2011-04-29  Per Daniel Conny Johansson
+	* Fixed the errors and bugs in the SCT_ReadCalibDataSvc::defectList
+        * tag as SCT_ConditionsServices-00-03-97	
+
+2011-04-20 Shaun Roe
+	* fix coverity warnings, but discovered logic error in ReadCalibData
+        * tag as SCT_ConditionsServices-00-03-96
+
+2011-02-08 Shaun Roe
+	* Fix for bug 77800: the getNptGainData and getNoiseOccupancyData of SCT_ReadCalibChipDataSvc
+        now return zero length vector if the module is not in the database or an invalid module id is requested
+        * The test algorithm was updated to look for the invalid case
+	* tag as SCT_ConditionsServices-00-03-94
+
+2011-01-12 Shaun Roe
+	* Minor changes in getList method of SCT_MonitorConditionsSvc, to improve performance
+        * tag as SCT_ConditionsServices-00-03-93	
+2011-01-06 Nick Barlow
+	* In ByteStreamErrorsSvc, put protection around retrieval of
+	config and cabling services, so they are only retrieved if
+	required later on.
+	* Tag as SCT_ConditionsServices-00-03-92
+	
+2010-11-19 Nick Barlow
+	* Merge changes from -00-03-87-01 (IBL branch) into HEAD
+	* Tag as SCT_ConditionsServices-00-03-91
+
+2010-10-04 Nick Barlow
+	* Updates to SCT_ByteStreamErrorsSvc, add info about
+	Condensed/Expanded mode, and add errors to both sides of a module
+	if it is using RX redundancy.
+	* Tag as SCT_ConditionsServices-00-03-90
+
+2010-09-29  Per Daniel Conny Johansson
+	* Fixed compilation warnings in SCT_ReadCalibChipDataSvc
+	* Tag as SCT_ConditionsServices-00-03-89
+
+2010-08-12 Nick Barlow
+        * Add ROBFragmentError to those considered "bad" by
+	SCT_ByteStreamErrorsSvc
+	* Tag as SCT_ConditionsServices-00-03-88
+	
+2010-08-11 Nick Barlow
+	* In SCT_ByteStreamErrorsSvc add option (turned off by default) to
+	use DCS HV conditions read from ByteStream (useful for online
+	monitoring which can't access COOL).
+	* Tag as SCT_ConditionsServices-00-03-87
+
+2010-04-26 Carl Gwilliam
+	* Make getChip(...) public in ISCT_ConfigurationConditionsSvc for
+	Junji et al.
+	* Tag as SCT_ConditionsServices-00-03-86
+	
+2010-02-28 Shaun Roe
+	* Fix for bug http://savannah.cern.ch/bugs/?63338 : Before run 119253, the SCT eabled services folder was not filled which
+	  resulted in the SCT being 'bad' throughout. THis condition is now detected and the SCT is considered 'good' instead.
+	* tag as SCT_ConditionsServices-00-03-84
+
+2010-02-18 Shaun Roe
+	* Changed SCT_ReadCalib but reverted changes due to obscure Cint (???) crash on finalize
+	* tag as SCT_ConditionsServices-00-03-83
+
+2010-02-16 Shaun Roe
+	* changed internal data structure of SCT_ReadCalibChipDataSvc to use boost::array
+	* tag as SCT_MonitorConditionsSvc-00-03-82
+
+2009-12-2 Minoru Hirose
+	* fixed bug in SCT_MonitorConditionsSvc.cxx
+
+2009-12-1 Tim Andeen
+	* merged SCT_DCS changes from branch 00-03-74 to trunk 
+	* tag as SCT_ConditionsServices-00-03-80
+	
+2009-12-1 Shaun Roe
+	* fixed bug, tag as SCT_ConditionsServices-00-03-79
+
+2009-11-30 Shaun Roe
+	* remove some extraneous code; commented bug: NOT FIXED YET, but non-lethal
+
+2009-11-30 Tim Andeen
+	* Fix for not clearing DCS conditions data at callbacks (bug
+	#59773) removed, real fix is in Sct_conditions data
+	* Tag as SCT_ConditionsServices-00-03-78
+ 	
+2009-11-29 Carl Gwilliam
+	* Fix for not clearing DCS conditions data at callbacks (bug #59773)
+	* Tag as SCT_ConditionsServices-00-03-77
+
+2009-11-29 Carl Gwilliam 
+	* Fix for majority state logic
+	* Tag as SCT_ConditionsServices-00-03-76
+	
+2009-11-27 Minoru Hirose
+	* Add additional function to read /SCT/Derived/DeadChips&Strips
+	* tag as SCT_ConditionsServices-00-03-75
+
+2009-11-18 Shaun Roe
+	* Add additional debug messages in TdaqEnabledSvc
+	* tag as SCT_ConditionsServices-00-03-74
+
+2009-11-16 Shaun Roe
+	* Add the TdaqEnabledSvc to the testSummary
+	* tag as SCT_ConditionsServices-00-03-73
+2009-11-13 Shaun Roe
+	* Added simple graphing to the testParameters (puts a graph in ./share, in xml format)
+	
+2009-11-11 Minoru Hirose
+	* Fix bug in SCT_MonitorConditionsSvc.cxx
+	* Tag SCT_ConditionsServices-00-03-72
+
+2009-11-03  Per Daniel Conny Johansson
+	* SCT_ReadCalibChipDataSvc changes, warning to debug msg and small fix in getNoiseOccupancyData
+	* Tag as SCT_ConditionsServices-00-03-71
+
+2009-11-1 Shaun Roe
+	* Add test algorithm and did some cleanup for TdaqEnabledSvc
+	* Tag as SCT_ConditionsServices-00-03-70
+
+2009-10-30 Shaun Roe
+	* Add a test algorithm and job options for testing the parameters
+	* Tag as SCT_ConditionsServices-00-03-69
+2009-10-29 Shaun Roe
+	* Add a ParametersConditionsService, calculating thresholds
+	* Tag as SCT_ConditionsServices-00-03-68
+
+2009-10-28 Carl Gwilliam
+	* Forgot interface
+	* Tag as SCT_ConditionsServices-00-03-67
+	
+2009-10-28 Carl Gwilliam
+	* First implementation of SCT_MajorityConditionsSvc and test algorithm
+	* Implementation of detector or barrel/endcap level interface 
+	* Tag as SCT_ConditionsServices-00-03-66
+
+2009-10-22 Tim Andeen
+	* Change SCT_DCSConditionsSvc.cxx such that all modules without
+	chanstat of ok, or manual are marked bad (instead of only HV
+	trip).
+	* Tag SCT_ConditionsServices-00-03-65
+	
+2009-10-21  Per Daniel Conny Johansson
+	* Added new Svc, SCT_ReadCalibChipDataSvc, and TestAlg for
+	reading the chip data from the calibration DB.
+	* Minor clean-up of the old ReadCalibData related code
+	* Tag as SCT_ConditionsServices-00-03-64
+
+2009-10-21 Nick Barlow
+	* SCT_ByteStreamErrorsSvcL add new type of error,
+	ROBFragmentError, to encompass any non-zero status word in the 
+	ROB header (including masked or truncated RODs, which are 
+	already accounted for with other error types).
+	* Tag as SCT_ConditionsServices-00-03-63
+
+2009-10-14 Minoru Hirose
+	* Fix bug in SCT_MonitorConditionsSvc.cxx
+	* Tag SCT_ConditionsServices-00-03-62
+	
+2009-10-07 Shaun Roe
+	* Add the new service to the components/entries
+	* Tag SCT_ConditionsServices-00-03-61
+
+2009-10-02 Shaun Roe
+	* Introduce new TdaqEnabledSvc
+	* compiles, but untested
+	* Tag SCT_ConditionsServices-00-03-60
+
+2009-10-02  Per Daniel Conny Johansson
+	* Cleaned up DataHandles for Calib folder callbacks
+	* Tag as SCT_ConditionsServices-00-03-59
+	
+2009-10-01  Tim Andeen
+	* Cleaned up DataHandles for DCS folder callbacks. 
+	* Tag as SCT_ConditionsServices-00-03-58
+	
+2009-09-21  Tim Andeen
+	* Fixed tag after improper tagging of 00-03-56. 
+	* Tag as SCT_ConditionsServices-00-03-57
+
+2009-09-17  Tim Andeen
+	* Removed dropObject call in SCT_DCSConditions to eliminate memory leaked caused by forcing IOVDbSvc to keep the cache.  
+	* Tag as SCT_ConditionsServices-00-03-56
+	
+2009-08-26  Per Daniel Conny Johansson
+	* Add method to SCT_ReadCalibDataSvc for returning a list of channels with a given defect 
+	* Tag as SCT_ConditionsServices-00-03-55
+
+2009-08-24 Carl Gwilliam	
+	* Delete arrays correctly in SCT_DCSConditionsSvc (bug #54609)
+	* Tag as SCT_ConditionsServices-00-03-54
+	
+2009-08-19  Jiri MASIK  <Jiri.Masik@cern.ch>
+
+	* src/SCT_DCSConditionsSvc.cxx: add missing registration of
+	folders in case of HVTemp access 
+	* Tag as SCT_ConditionsServices-00-03-53
+
+2009-08-17 Carl Gwilliam
+        * Remove dropObject() for SCT_MonitoringConditionsSvc as
+	incorrectly called before any data is filled and causing
+	warning.
+	* Tag as SCT_ConditionsServices-00-03-52
+	
+2009-07-31  Jiri MASIK  <Jiri.Masik@cern.ch>
+        * src/SCT_DCSConditionsSvc.cxx: FolderLocation property to allow
+          /SCT/HLT/DCS access for the trigger
+        * Tag as SCT_ConditionsServices-00-03-51
+
+2009-07-23 Carl Gwilliam	
+	* Add extra interface for SCT_MonitorConditionsSvc to provide extra information
+	* Tag as SCT_ConditionsServices-00-03-49
+
+2009-07-17 Carl Gwilliam
+        * Fix bug in storing of bad chip info for only modules with bad chips 
+	* Tag as SCT_ConditionsServices-00-03-48
+	
+2009-07-15 Carl Gwilliam
+        * Cleanup new ISCT_FlaggedConditionSvc interface	
+	* Tag as SCT_ConditionsServices-00-03-47
+	
+2009-07-14 Tim Andeen
+	* Add option to SCT_DCSConditions to ignore chanstat value but still return HV and modtemps
+	* Tag as SCT_ConditionsServices-00-03-46
+	
+2009-07-10 Carl Gwilliam
+	* Add interfaces and change to component library
+	* Add extra functionality to SCT_ConfigurationConditions to monitor config
+	* Tag as SCT_ConditionsServices-00-03-45
+
+2009-06-22 Nick Barlow
+	* Add new error "TruncatedROD" to SCT_ByteStreamErrors enum
+	* Tag as SCT_ConditionsServices-00-03-44
+
+2009-06-22 Shaun Roe
+	* Changes for SLHC compilation with 64 bit Identifiers
+	* Tag as SCT_ConditionsServices-00-03-43
+2009-06-22 Shaun Roe
+	* Correct compilation warning in SCT_MonitorConditionsSvc
+	* Tag as SCT_ConditionsServices-00-03-42
+2009-06-17 Nick Barlow
+	* Add new error "RODClockError" to SCT_ByteStreamErrors enum
+	* Tag as SCT_ConditionsServices-00-03-41
+
+2009-06-16 Shaun Roe
+	* Deprecated the goodFraction method, now always returns 1.0 and issues a deprecation warning
+	* tag as SCT_ConditionsServices-00-03-40
+
+2009-06-02 Tim Andeen
+	* changed 9999 error message for module not found in dcscondtions to InvalidID. 
+	* tag as SCT_ConditionsServices-00-03-39
+	
+2009-06-02 Nick Barlow
+	* include masked links in SCT_ByteStreamErrorsSvc::isGood()
+	* Tag as SCT_ConditionsServices-00-03-38
+
+2009-05-29 Nick Barlow
+	* Add "MaskedLink" to SCT_ByteStreamErrorsSvc
+	* Tag as SCT_ConditinsServices-00-03-37
+
+2009-05-14 Carl Gwilliam
+	* Add python configurable for DCS service to SCT_SilcionConditionsSvc
+	* Fixes to silicon and DCS test algs
+	* Tag as SCT_ConditionsServices-00-03-36
+
+2009-05-06 Tim Andeen	
+	* SCT_SiliconCondSvc uses DCS conditions by default, protects against 
+	bad dcs values. 
+	* SCT_DSCCondSvc reads 3 folders now by default. 
+	* Tag as SCT_ConditionsServices-00-03-35
+	
+2009-05-06 Tim Andeen
+	* SCT_DCSConditionsSvc provides corrected sensor temperature, dependent on module type
+	* Tag as SCT_ConditionsServices-00-03-34
+	
+2009-05-12 Carl Gwilliam
+	* First implementation of a test SCT_LinkMaskingSvc
+	* Tag as SCT_ConditionsServices-00-03-33
+
+2009-05-11 Shaun Roe
+	* fix bug 50167
+	* Tag as SCT_ConditionsServices-00-03-32
+
+2009-05-06 Tim Andeen
+	* SiliconConditionsSvc can now get temp/HV from DCSConditionsSvc
+	* Added new interface for DCS_ConditionsSvc
+	* Tag as SCT_ConditionsServices-00-03-31
+
+2009-04-20 Tim Andeen
+	* Added methods to return the HV and temperature to 
+	SCT_DCSConditionsSvc, should not change default behavior
+	* Tag as SCT_ConditionsServices-00-03-30
+	
+2009-04-15 Kazu Hanagaki
+	* Recovery to 00-03-27 where SCT ID helper retrieves from detStore
+	* Tag as SCT_ConditionsServices-00-03-29
+
+2009-04-07 Kazu Hanagaki
+	* Change SCT_MonitorConitionsSvc to drop DB folders from SG.
+	* Tag as SCT_ConditionsServices-00-03-28
+
+2009-04-06 Tim Andeen 
+	* Change SCT_DCSConditionSvc so it drops the folders from SG, but not from the cache. 
+	* Tag as SCT_ConditionsServices-00-03-27
+
+2009-04-06 Carl Gwilliam	
+	* Change to retrieving SCT ID helper from detStore rather than manager
+	* Tag as SCT_ConditionsServices-00-03-26
+	
+2009-04-03 Tim Andeen 
+	* Improve memory usage by dropping DB folders after filling local
+	structures in SCT_DCSConditionSvc
+	* Tag as SCT_ConditionsServices-00-03-25
+2009-04-02  Per Daniel Conny Johansson
+	* Improve memory usage by dropping DB folders after filling local
+	structures in SCT_ReadCalibDataSvc
+	* Tag as SCT_ConditionsServices-00-03-24
+
+2009-03-27 Grant Gorfine <Grant.Gorfine>
+	* SCT_SiliconConditionsSvc: Fix bug when ForceUseGeoModel set. 
+	* Tag as SCT_ConditionsServices-00-03-23
+
+2009-03-25  Jose E. Garcia
+	* Improve access to DB of the MonitoringSvc
+	* Tag as SCT_ConditionsServices-00-03-22
+
+2009-03-23 Carl Gwilliam
+	* Improve memory usage by dropping DB folders after filling local
+	structures
+	* Tag as SCT_ConditionsServices-00-03-21
+
+2009-03-18 Shaun Roe
+	* (Committing for Jose) possible fix for bug 47936
+	* Tag as SCT_ConditionsServices-00-03-20
+
+2009-03-06 Nick Barlow 
+	* SCT_ByteStreamErrorsSvc - 
+	use SG::contains() as a pre-retrieve check when getting the
+	InDetBSErrContainer, to avoid a WARNING message from SG if it
+	isn't there.
+	* Tag as SCT_ConditionsServices-00-03-19
+
+2009-03-04  Per Daniel Conny Johansson
+	* Updated the testCalib.py to reflect the new DB folders
+	* Tag as SCT_ConditionsServices-00-03-18
+
+2009-03-04  Per Daniel Conny Johansson
+	* Fix bug #47457: 15.X.0: access to SCT conditions very slow
+	* The DB folders have been split between defects and data
+	* The defect folders for each wafer have been merged, and unnecessary folders have been removed
+	* The SCT_ReadCalibDataSvc and TestAlg have been modified and now only handles defects
+	* Tag as SCT_ConditionsServices-00-03-17
+	
+2009-03-02 Grant Gorfine <Grant.Gorfine>
+	* SCT_SiliconConditionsSvc and requirements: Move GeoModel check
+	  from SiLorentzAngleSvc to here.
+	* Tag as SCT_ConditionsServices-00-03-16
+
+2009-02-27 Shaun Roe
+	* Fix memory leak in Calibration code, see bug  <http://savannah.cern.ch/bugs/?47484>
+	* Tag as SCT_ConditionsServices-00-03-15
+
+2009-02-25  Per Daniel Conny Johansson
+	* Fix potentially unchecked StatusCode in SCT_ReadCalibDataSvc
+	* Tag as SCT_ConditionsServices-00-03-14
+	
+2009-02-25 Tim Andeen
+	* Downgraded INFO message to DEBUG in SCT_DCSConditionsSvc FillData.
+	* Tag as SCT_ConditionsServices-00-03-13
+	
+2009-02-19 Nick Barlow
+        * Downgrade WARNING message to INFO.
+	* Tag as SCT_ConditionsServices-00-03-12
+	
+2009-02-18 Nick Barlow
+	* Fix potentially unchecked StatusCode in SCT_ByteStreamErrorsSvc
+	* Tag as SCT_ConditionsServices-00-03-11
+
+2009-02-18 Shaun Roe
+	* Bug fix in SCT read calib data test alg; extra service handles removed
+	* Tag as SCT_ConditionsServices-00-03-10
+2009-02-17  Per Daniel Conny Johansson
+	* Changes and improvements to SCT_ReadCalibDataSvc
+	* Now uses the real calibration data in comp200, folders setup per default in the .cxx 
+	* Defects used in isGood changed
+	* Updated the testCalib.py 
+	* Activated it in SCT_ConditionsServicesSetup.py
+	* Tag as SCT_ConditionsServices-00-03-09
+
+2009-02-17 Tim Andeen
+	* Changed SCT_DCSConditionsSvc to have the option to read only
+	the CHANSTAT folder from the DB,instead of four folders. Can
+	turn this off and read everything with a flag. 
+	* Tag as SCT_ConditionsServices-00-03-08
+	
+2009-02-15 Nick Barlow 
+	* Yet another fix for SCT_ByteStreamErrorsSvc - realise now that
+	the new method of populating the Svc from the SG container won't 
+	work for the trigger use case, so add new addErrorCount(errType)
+	method for them
+	* Tag as SCT_ConditionsServices-00-03-07
+
+2009-02-10 Nick Barlow
+	* One more fix for SCT_ByteStreamErrorsSvc, to stop it spamming
+	error messages if it doesn't find the BSErrContainer in SG
+	(e.g. if it is reading an ESD file where this container was not
+	written out).
+	* Tag as SCT_ConditionsServices-00-03-06
+
+2009-02-05 Nick Barlow
+        * Make SCT_ByteStreamErrorsSvc fill itself (with fillData()) from
+	the StoreGate container the first time it is asked for any data.
+	(therefore no further need for recordData() method).
+	* Tag as SCT_ConditionsServices-00-03-05
+	
+2009-01-30 Nick Barlow
+	* commit src/components/SCT_ConditionsServices_entries.cxx 
+	that i somehow missed before.
+	* Tag as SCT_ConditionsServices-00-03-04
+
+2009-01-30 Nick Barlow
+	* Add interface class ISCT_ByteStreamErrorsSvc, simplify addXXX
+	and getXXX interface and move SCT_ByteStreamErrorsSvc.h into src/
+	*Tag as SCT_ConditionsServices-00-03-03
+	
+2009-01-12 Shaun Roe
+	* add version message in finalize
+
+2009-01-21 Shaun Roe
+	* revert to dual_use due to failure in ATN job
+	* tag as SCT_ConditionsServices-00-03-02
+
+2009-01-20 Shaun Roe
+	* Add UML class images
+
+2009-01-20 Shaun Roe
+	* Clean up requirements after moving code
+	* remove SCT_ChipMask
+	* tag as SCT_ConditionsServices-00-03-01
+
+2009-01-20 Shaun Roe
+	* Move much of the code (all conforming to ISCT_ConditionsSvc) to the src directory
+	* tag as SCT_ConditionsServices-00-03-00 (major version change)
+
+2009-01-20 Shaun Roe
+	* Take out the ...module.. *.py in requirements
+	* other corrections to requirements
+	* tag as SCT_ConditionsServices-00-02-11
+ 
+2009-01-19 Shaun Roe
+	* Includeed Jose's improvements
+	* candidate for clean code, tag as SCT_ConditionsServices-00-02-10
+
+2009-01-19 Shaun Roe
+	* testMonRead runs, although with some errors (to be fixed in db)
+	* testVeto runs
+
+2009-01-19  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Convert SCT_MonitorConditionsTestAlg to AthAlgorithm and clean up
+	* Tag as SCT_ConditionsServices-00-02-09
+
+2009-01-17  Carl Gwilliam
+	* Convert SCT_ReadoutTool to AthAlgorithm and clean up
+	* Tag as SCT_ConditionsServices-00-02-08
+
+2009-01-16  Carl Gwilliam
+	* Clean up of SCT_ConfigurationConditionsSvc
+	* Tag as SCT_ConditionsServices-00-02-07
+
+2009-01-16  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Converted SCT_DCSConditionsTestAlg to AthAlgTool and cleaned it up
+	* Also some more clean-up of inlcudes in ReadCalibDataTestAlg
+	* Tag as SCT_ConditionsServices-00-02-06
+
+2009-01-15 Shaun Roe
+	* Fix compilation bug in SiliconSvc and friend class bug in DCS conditions
+
+2009-01-14  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Converted SCT_ReadCalibDataTestAlg to AthAlgTool and cleaned it up
+	* Tag as SCT_ConditionsServices-00-02-05
+
+209-01-14 Carl Gwilliam
+	* Converted SCT_ReadoutTool to AthAlgTool
+	* Cleaned up includes, improved documentation + other minor tweaks for 
+	SCT_FlaggedConditionService, SCT_SiliconConditionsService and SCT_Chip
+	* First go at cleaning up and privatising requirements
+	* Tag as SCT_ConditionsServices-00-02-04
+
+2009-01-14 Shaun Roe
+	* ModuleVetoTestAlg, SiliconConditionsTestAlg, ConditionsSummaryTestAlg inherit from AthAlgorithm
+	* updated test job opts 
+	
+2009-01-03 Shaun Roe
+	* Change to using service handles for StoreGate, det store in ReadCalibDataSvc
+	* tag as SCT_ConditionsServices-00-02-03
+
+2008-12-22 Shaun Roe
+	* more cleaning
+	* tag as SCT_ConditionsServices-00-02-02
+
+2008-12-21 Shaun Roe
+	* Start cleanup on calibration/monitoring (it compiles, don't guarantee it runs just now)
+	* tag as SCT_ConditionsServices-00-02-01
+2008-12-21 Shaun Roe
+	* Move remaining code which is only used locally to the src directory
+	* tag as SCT_ConditionsServices-00-02-00
+ 
+2008-12-21 Shaun Roe
+	* Move all algorithm test code to the .src directory
+	* tag as SCT_ConditionsServices-00-01-00 (major change, test algorithms no longer available outside this package)
+
+2008-12-21 Shaun Roe
+	* Clean SCT_ConditionsSummarySvc, small changes in SCT_ReadoutTool
+	* tag as SCT_ConditionsServices-00-00-95
+
+2008-12-20 Shaun Roe
+	* Clean up SCT_ConfigurationConditionsSvc
+	* tag as SCT_ConditionsServices-00-00-94
+
+2008-12-19 Shaun Roe
+	* clean up SCT_StripVetoSvc
+	* tagged as SCT_ConditionsServices-00-00-93
+
+2008-12-19 Shaun Roe
+	* clean up SCT_ModuleVetoSvc
+	* tagged as SCT_ConditionsServices-00-00-92
+
+2008-12-19 David Quarrie <David.Quarrie@cern.ch>
+	* SCT_ConditionsServices/SCT_ByteStreamErrorsSvc.h: Add gcc 4.3 compatibility (replace a forward declaration of StoreGateSvc by a #include StoreGate/StoreGateSvc.h)
+	* tagged as SCT_ConditionsServices-00-00-91
+
+2008-12-17 David Quarrie <David.Quarrie@cern.ch>
+		* SCT_ConditionsServices/SCT_Chip.h: Add gcc 4.3 compatibility
+		* tagged as SCT_ConditionsServices-00-00-90
+
+2008-12-17 Tim Andeen <Timothy.Robert.Andeen@cern.ch>
+	* fix compilation bug SCT_MonitorConditionsSvc.h
+	* fix compilation bug SCT_MonitorConditionsTestAlg.h
+	* fix compilation bug SCT_MonitorConditionsTestAlg.cxx
+	* fix compilation bug SCT_ReadCalibDataSvc.cxx
+	* fix compilation bug SCT_ReadCalibDataTestAlg.cxx
+	* Cleanup of SCT_DCSConditionsSvc.h
+	* Cleanup of SCT_DCSConditionsSvc.cxx
+	
+2008-12-16 Nick Barlow
+	* Cleanup of SCT_ByteStreamErrorsSvc
+	* Add AthenaBaseComps to cmt/requirements
+	
+2008-12-11 Shaun Roe
+	* Changed code to relect new SCT_DCSConditionsData interface
+	* Tag as SCT_ConditionsServices-00-00-89
+
+2008-12-08  Vakho Tsulaia
+	* Clean up callbacks
+	* Tag as SCT_ConditionsServices-00-00-88
+
+2008-11-26 Shaun Roe
+	* fix checkreq warnings given by checkreq.sh
+	* tag as SCT_ConditionsServices-00-00-87
+
+2008-11-23 Markus Elsing
+	* remove fake dependency on SCT_Cabling
+	* tagged as SCT_ConditionsServices-00-00-86
+	
+2008-11-22 Carl Gwilliam
+	* Adapt to changes in the lorentz angle calculation interface
+	* Tag as SCT_ConditionsServices-00-00-85
+	
+2008-11-20 Nick Barlow
+	* Update SCT_ByteStreamErrorsSvc - isGood will only look for 
+	TimeOut, LVL1ID or BCID errors, and will only report about wafers.
+	* Also add SCT_ByteStreamErrorsSvc in SCT_ConditionsServicesSetup.py
+	* Tag as SCT_ConditionsServices-00-00-84
+	
+2008-11-20 Andree R-Veronneau
+	* Updated SCT_DcsAlerts.h
+	* Tag as SCT_ConditionsServices-00-00-83
+
+2008-11-20 Shaun Roe
+	* Fix compilation error due to misnamed 'include' in SCT_Chip.cxx
+	* tag as SCT_ConditionsServices-00-00-82
+
+2008-11-19 Shaun Roe
+	* Change to new SCT_CablingSvc
+	* fix compilation bug in SCT_Config...Svc
+	* tag as SCT_ConditionsServices-00-00-81
+
+2008-11-18 Nick Barlow
+	* Very minor fix to SCT_ByteStreamErrorsSvc
+
+2008-11-18 Nick Barlow
+	* One-line change from Carl to enable masking of chips not in
+	readout
+	* Fix to SCT_ByteStreamErrorsSvc::readData() to specify container
+	name
+	* Tag as SCT_ConditionsServices-00-00-80
+
+2008-11-18 Nick Barlow
+	* Update SCT_ByteStreamErrorsSvc to be able to read and write new
+	persistifiable BSErr container
+	* Add use InDetByteStreamErrors to cmt/requirements
+	* Tag as SCT_ConditionsServices-00-00-79
+
+2008-11-14 Carl Gwilliam
+	* Correct a bug in SCT_ReadoutTool (since this is not yet masking chips 
+	it has no affect on any output) and imporve debug messages (more consistent
+	with online)
+	* Tag as SCT_ConditionsServices-00-00-78  (-77 only had a partial commit)
+
+2008-11-13 Andree R-Veronneau
+	* Modified methods for consistency with changes in DCS data object format
+	* Removed useless statements in SCT_DCSConditionsTestAlg.cxx
+	* Modified testDCSConditions.py accordingly
+	* Removed HV Current checks
+	* Removed communication error 'trips' from checks
+	* Tag as SCT_ConditionsServices-00-00-76 
+
+2008-11-13 Carl Gwilliam
+	* Adapt checks fro NULL values to new cool version
+	* Tag as SCT_ConditionsServices-00-00-75
+
+2008-11-12 Nick Barlow 
+	* Merge  LCGCMT_55b related changes in SCT_ReadCalibDataSvc and 
+	SCT_MonitorConditionsSvc with the HEAD
+	* Tag as SCT_ConditionsServices-00-00-74
+
+2008-11-09 Shaun Roe
+	* SCT_Chip.cxx had missing typedef
+	* Tag as SCT_ConditionsServices-00-00-73
+
+2008-11-04 Carl Gwilliam
+	* Added a first iteration of SCT_ConditionsServicesSetup.py, which
+	provides pre-configured services for use in e.g. InDetRecExample
+	* Tag as SCT_ConditionsServices-00-00-72
+
+2008-10-31 Andree R-Veronneau
+	* Modified isGood method allow queries by hashes and also on side and strip level
+	* Fixed testDCSConditions.py to allow the usage of idHelper
+	* Tag as SCT_ConditionsServices-00-00-71
+
+2008-10-30 Carl Gwilliam
+	* Add a new interface to SCT_ReadoutTool to allow to determine the readout from a 
+	truncated serial number as well as a module ID.  Also imporved the debug messages.
+	* Tag as SCT_ConditionsServices-00-00-70
+
+2008-10-28 Nick Barlow
+	* Restore std::vector ==> std::set changes in SCT_ByteStreamErrorsSvc 
+
+2008-10-30 Carl Gwilliam
+	* Fix bug whereby null values in the MUR folder were not dealt
+	with
+	* Tag as SCT_ConditionsServices-00-00-69
+
+2008-10-29 Andree R-Veronneau
+	* Fixed testDCSConditions.py
+	* Included HV and LV trip decoding from CHANSTAT
+	* isGood() method return value now meaningful (only when called with full offline ids)
+	* Tag as SCT_ConditionsServices-00-00-68
+
+2008-10-29 Carl Gwilliam
+	* Bug fix to bad link logic in SCT_ConfigurationConditionsSvc
+	(since the code to deal with chip masking is currently switched
+	off this does not effect the results of the conditions svc) 
+	* Tag as SCT_ConditionsServices-00-00-67
+
+2008-10-28 Nick Barlow
+	* Back out changes in SCT_ByteStreamErrorsSvc in order to have a tag ready for 14.4.0
+	* Tag as SCT_ConditionsServices-00-00-66
+
+2008-10-28
+	* First addition of code to deal with bypassed chips, dead links etc.
+	* The chip masking is currently switched off untill it is fully tested
+	* Tag as SCT_ConditionsServices-00-00-65
+
+2008-10-28 Andree R-Veronneau
+	* add default values for DCS folders in SCT_ConditionsSvc.cxx
+	* Tag as SCT_ConditionsServices-00-00-64
+
+2008-10-21 Nick Barlow
+	* change SCT_ByteStreamErrorsSvc to use std::set instead of
+	std::vector, to prevent multiple entries if the HLT asks for the same
+	ROBFragments to be decoded several times.
+	* Tag as SCT_ConditionsServices-00-00-63
+
+2008-10-08 Carl Gwilliam
+	* Fix queryInterface of SCT_DCSConditionsSvc to allow it to be retrieved as the correct interface type
+	  in the SCT_ConditionsSummarySvc
+	* Fix unchecked status code in  SCT_DCSConditionsSvc
+	* Removed unnecessary in cludes int he header files of SCT_SiliconCondtionsSvc/TestAlg
+	* Tag as SCT_ConditionsServices-00-00-62
+
+2008-10-09 Andree R-Veronneau
+	* Use Thijs SCT_DCSConditionsSvc.h (should have been done on 2008-10-01...)
+	* Tag as SCT_ConditionsServices-00-00-61
+
+2008-10-09 Shaun Roe
+	* Remove unchecked status code from veto svc
+	* Tag as SCT_ConditionsServices-00-00-60
+
+2008-10-04 Carl Gwilliam
+	* Fix bug wherby the list of bad IDs in SCT_FlaggedConditionsSvc was not being reset for each event
+	* Add metthod to return the map of bad Ids (per event)
+	* Tag as SCT_ConditionsServices-00-00-59
+
+2008-10-02 Carl Gwilliam
+	* Fixed broken compilation in SCT_ConditionsSvc.h (change log to
+	m_log)
+	* Tag as SCT_ConditionsServices-00-00-58
+
+2008-10-01 Andree R-Veronneau
+	* Modified SCT_DcsAlerts.h to reflect new names of attributes in COOL folders (and updated alert thresholds)
+	* Added special cases for attr. specification type in SCT_DCSConditionsSvc.cxx
+	* Tag as SCT_ConditionsServices-00-00-57
+
+2008-09-25 Carl Gwilliam
+	* Added first implemenation of SCT_SiliconConditionsSvc, which implemenents the ISiliconConditionsSvc interface, 
+	  to report Vd, Vb and T.  Curently this returns static values and the retrieval of DCS information from the
+	  DB still needs implementing.  A test algorithm, SCT_SiliconConditionsTesAlg, is also added.
+	* Tag as SCT_ConditionsServices-00-00-56
+
+2008-09-13 Jan Strube
+	* changed several instances of C-Style casts to C++-style casts
+	* changed several occasions of string copies to either return by reference or using class variables
+	  as a result the string returned by SCT_ConditionsMonitoringSvc::getList is no longer valid across calls to that method
+	* removed global variables in SCT_Conditions_MonitoringSvc
+	* cached calls to the database on a folder basis. I am not sure if this is necessary. If each _instance_ of this service is called only with one folder name, the map can be reduced to an instance variable of CondAttrListCollection
+	* The used folder names are now class variables. They should be changed to properties if more than one folder is uesed
+
+2008-09-08 Carl Gwilliam
+	* Adapt to changes in the online group number for modules: any
+	negative number (not just -1) can now indicate a bad module  
+	* Tag as SCT_ConditionsServices-00-00-54
+
+2008-09-08 Carl Gwilliam
+	* Fix bug in SCT_ConfigurationCondtionsSvc whereby only half the
+	bad module information was filled.
+	* Tag as SCT_ConditionsServices-00-00-53	
+
+2008-09-03 Kazu Hanagaki
+	* Fix of memory leak
+	* Clean-up for various inefficient part
+	* Tag as SCT_ConditionsServices-00-00-52
+
+2008-08-27 Kazu Hanagaki
+	* Change of some variable names
+	* Fix of memory leak
+	* Tag as SCT_ConditionsServices-00-00-51
+
+2008-08-02 Shaun Roe
+	* Guard against invalid identifiers returned by cabling, which can happen if the serial number is not in the cabling map
+	* Tag as SCT_ConditionsServices-00-00-50
+
+2008-07-31 Shaun Roe	
+	* Fix finalize in configuration service
+	* tag as SCT_ConditionsServices-00-00-49
+2008-07-28 Carl Gwilliam
+	* Fix checking of StatusCodes
+	* Tag as SCT_ConditionsServices-00-00-48
+
+2008-07-27  Vakho Tsulaia  <tsulaia@mail.cern.ch>
+	* Migrate SCT_FlaggedConditionSvc to the automatic geometry configuration
+
+2008-07-25 Carl Gwilliam
+	* Add check on canReportAbout for IdentifierHash versions of isGood() too.
+	* Tag as SCT_ConditionsServices-00-00-46
+
+2008-07-25 Carl Gwilliam
+	* SCT_ConditionsSummary will now check canReportAbout() and isGood() will return
+	as soon as one service reports the id as bad (rather than check all)
+	* SCT_ConfigurationSonditionsService now does a run-time look up of strips in bad 
+	modules (rather than storing them in memmory).  Also fixed a bug in the checking 
+	of bad wafer ids (only side 0 info was there).
+	* Tag as SCT_ConditionsServices-00-00-44
+
+2008-07-24 Kazu Hanagaki
+	* wrapUp() was divided into three for each folder
+	* modified canReportAbout
+	* Tag as SCT_ConditionsServices-00-00-43
+
+2008-07-15  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Fix bug that always made isGood return good strip
+	* Changed methods to access the calibration data to better correspond to the needs of the SCT_Digitization
+	* Added metod for the HLT to mask noisy/bad modules
+	* CPU/memory optimization, and clean-up of the code
+	* Tag as SCT_ConditionsServices-00-00-42
+
+2008-07-15 Carl Gwilliam
+	* Fix bogus warning in SCT_ConfigurationConditionsSvc when try to add same
+	strip more than once.
+	* General clean up of SCT_ConfigurationConditionsSvc
+	* Tag as SCT_ConditionsServices-00-00-41
+
+2008-07-11 Nick Barlow <nbarlow@mail.cern.ch>
+	* In SCT_ByteStreamErrorsSvc, add isRODSimulatedData() method to 
+	identify when data was taken with the simulator rather than real 
+	modules.
+	* tag as SCT_ConditionsServices-00-00-40
+
+2008-07-09 Nick Barlow <nbarlow@mail.cern.ch>
+	* Minor cleanup in SCT_ByteStreamErrorsSvc, and enable it 
+	to report on SCT_STRIP (currently calls strip bad if it is in a 
+	wafer with any type of BS error - will require tuning!)
+	* tag as SCT_ConditionsServices-00-00-39
+
+2008-06-20 Shaun Roe
+	* Fix compiler warnings
+	* tag as SCT_ConditionsServices-00-00-38
+
+2008-06-19 Kazu Hanagaki
+	* Added a folder and funcions to store noise occupancy in Monitor DB
+	* tag as SCT_ConditionsServices-00-00-37
+
+2008-05-31 Nick Barlow <nbarlow@mail.cern.ch>
+	* Update SCT_ByteStreamErrorsSvc to include more types of error,
+	and also provide counts of different error types for HLT.
+	* tag as SCT_ConditionsServices-00-00-36
+
+2008-05-31 Kazu Hanagaki
+	* Modification of data format for Monitor DB
+	* Cleaned up the code
+	* tag as SCT_ConditionsServices-00-00-35
+
+2008-05-25  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Fix compilation warning in SCT_ReadCalibDataTestAlg.cxx
+	* Remove tmp fix in jobOption, since folders now copied to OFLP200
+	* tag as SCT_ConditionsServices-00-00-34
+
+2008-05-24 Shaun Roe
+	* Change the testVeto alg and job options to test the veto service
+	* tag as SCT_ConditionsServices-00-00-33
+
+2008-05-24 Shaun Roe
+	* Change ModuleVeto to be able to read from a database
+	* tag as SCT_ConditionsServices-00-00-32
+
+2008-05-23 Kazu Hanagaki
+	* Change the DB folder structure used by SCT_MonitorConditionsSvc
+	* tag as SCT_ConditionsServices-00-00-31
+
+2008-05-21  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Added the SCT Calibration Data service
+	* tag as SCT_ConditionsServices-00-00-30
+
+2008-05-15 Kazu Hanagaki
+	* Change the format stored in database used by SCT_MonitorConditionsSvc
+	* tag as SCT_ConditionsServices-00-00-29
+
+2008-05-14 Shaun Roe
+	* changes for compatibility with new cabling
+	* tag as SCT_ConditionsServices-00-00-28
+
+2008-05-14 Shaun Roe
+	* Additional diagnostics for cabling map being empty
+	* testSummary job options shown to be ok
+	* tag as SCT_ConditionsServices-00-00-27
+
+2008-05-14 Shaun Roe
+	* TestVeto job options repaired
+	* testSummary joboptions give seg fault, suspect database integrity (need to improve error reporting)
+	* tag as SCT_ConditionsServices-00-00-26
+
+2008-05-11 Carl Gwilliam
+	* Add SCT_FlaggedConditionSvc to flag bad modules with a reason
+
+2008-05-09 Carl Gwilliam
+	* Update to use bad module/wafer information
+
+2008-05-09 Kazu hanagaki
+	* A function in SCT_MonitorConditionsSvc to read COOL is added
+	* tag as SCT_ConditionsServices-00-00-24
+
+2008-05-05 Shaun Roe
+	* Change requirements to dual use
+	* tag as SCT_ConditionsServices-00-00-22
+
+2008-04-12 Shaun Roe
+	* SummarySvc demonstrated to work with reading chip configuration from CoraCool db
+	* tag as SCT_ConditionsServices-00-00-21
+
+2008-04-12 Shaun Roe
+	* Nearly there reading masks, introduced SCT_ChipMask here due to compilation problems in SCT_ConditionsAlgs
+	* Removed dependency on SCT_ConditionsAlgs
+	* tag as tag as SCT_ConditionsServices-00-00-20
+
+2008-04-11 Shaun Roe
+	* small progress reading channel masks from CoraCool
+	* tag as SCT_ConditionsServices-00-00-19
+
+2008-04-11 Andree Robichaud-Veronneau
+	* Added Attribute name retrieval to DCS Svc and tested with alg. Can now be used.
+	* tag as SCT_ConditionsServices-00-00-18
+
+2008-04-11 Shaun Roe
+	* Fleshed out some more SummarySvc methods, to make them operable.
+	* tag as SCT_ConditionsServices-00-00-17
+
+2008-04-06 Shaun Roe
+	* Elementary access of DCS conditions appears to work, needs further testing
+	* tag as SCT_ConditionsServices-00-00-15
+
+2008-04-04 Shaun Roe
+	* Stripped functionality out of DCS conditions, repaired basic structure
+	* tag as SCT_ConditionsServices-00-00-14
+
+2008-03-29 Nick Barlow
+	* Updated SCT_ByteStreamErrorsSvc to work with IdHashes.
+	* tag as SCT_ConditionsServices-00-00-13
+
+2008-03-28 Andree Robichaud-Veronneau
+	* Added jobOptions to test DCS Service which doesn't work, need feedback
+	* tag as SCT_ConditionsServices-00-00-12
+
+2008-03-25 Shaun Roe
+	* Remove various unused parameters to prevent compiler warnings; other cleanups
+	* tag as SCT_ConditionsServices-00-00-11
+
+2008-03-14 Shaun Roe
+	* Added Kazu's code for Monitor conditions
+	* tag as SCT_ConditionsServices-00-00-10
+
+2008-03-13 Shaun Roe
+	* Added a strip veto service to enable development of clusterization code
+	* tag as SCT_ConditionsServices-00-00-09
+
+2008-03-13 Shaun Roe
+	* Started configuration reader. Compiles, but untested
+	* tag as SCT_ConditionsServices-00-00-08
+
+2008-03-09 Shaun Roe
+	* Added Nick Barlows SCT bytestream errors service
+	* tag as SCT_ConditionsServices-00-00-07
+
+2008-03-04 Shaun Roe
+	* Introduced IdentifierHash method in the ISCT_ConditionsSvc baseclass and veto, dummy one in DCS to make it compile
+	* tag as SCT_ConditionsServices-00-00-06
+
+2008-02-28 Andree Robichaud-Veronneau
+	* Added the SCT_DCSConditions Service and TestAlg, both compiled, but not tested
+	* tag as SCT_ConditionsServices-00-00-05
+
+2008-02-26 Shaun Roe
+	* SummarySvc works, using veto code as example
+	* Test code introduced for summarySvc
+	* tag as SCT_ConditionsServices-00-00-04
+
+2008-02-25 Shaun Roe
+	* ok, now the veto seems to work!
+	* tag as SCT_ConditionsServices-00-00-03
+
+2008-02-25 Shaun Roe
+	* Fixed a bug when tool used
+	* tag as SCT_ConditionsServices-00-00-02
+
+2008-02-25 Shaun Roe
+	* Introduced test algorithm, tested the module veto, ok.
+	* tag as SCT_ConditionsServices-00-00-01
+
+2008-02-23 Shaun Roe
+	* Move interfaces to InDetConditionsSummaryService
+
+2008-02-20 Shaun Roe<shaun.roe@cern.ch>
+	* Introduce first interfaces (ISiliconConditionsSvc and IInDetConditionsSvc) and commit
+
+2008-02-16 Frederick Luehring <Fred.Luehring@cern.ch>
+	* Create package SCT_ConditionsServices-00-00-00.
+
