@@ -9,8 +9,10 @@ pkgco.py InnerDetector/InDetExample/InDetRecExample
 setupWorkArea.py
 cd WorkArea/cmt
 cmt config; source setup.sh; cmt bro gmake
+
 > Modify InDetRecExample/share/InDetRecConditionsAccess.py like
 > https://github.com/dhayakaw/InDetRecExample/blob/master/share/InDetRecConditionsAccess.py
+
 cd ../run
 Reco_tf.py, athena, etc..
 
