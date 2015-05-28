@@ -17,6 +17,17 @@ cmt config; source setup.sh; cmt bro gmake
 
 cd ../run  
 Reco_tf.py, athena, etc..  
+Reco_tf.py \  
+--autoConfiguration everything \  
+--DBRelease current \  
+--geometryVersion ATLAS-R2-2015-01-01-00 \  
+--conditionsTag OFLCOND-RUN12-SDR-30 \  
+--inputRDOFile $INPUTFILE \  
+--outputAODFile test_AOD.pool.root \  
+--maxEvents -1 \  
+--preExec 'rec.Commissioning.set_Value_and_Lock(True);from AthenaCommon.BeamFlags import jobproperties;jobproperties.Beam.numberOfCollisions.set_Value_and_Lock(20.0);jobproperties.Beam.bunchSpacing.set_Value_and_Lock(25);from LArROD.LArRODFlags import larRODFlags;larRODFlags.doOFCPileupOptimization.set_Value_and_Lock(True);larRODFlags.NumberOfCollisions.set_Value_and_Lock(20);larRODFlags.nSamples.set_Value_and_Lock(4)' 'RAWtoESD:from TriggerJobOpts.TriggerFlags import TriggerFlags;TriggerFlags.triggerMenuSetup="DC14_loose_mc_prescale";from CaloRec.CaloCellFlags import jobproperties;jobproperties.CaloCellFlags.doLArCellEmMisCalib=False' 'ESDtoAOD:TriggerFlags.AODEDMSet="AODFULL"' \  
+--preInclude HITtoRDO:Digitization/ForceUseOfPileUpTools.py SimulationJobOptions/preInclude.PileUpBunchTrainsUpgradeConfig1_25ns.py RunDependentSimData/configLumi_run222222.py  \  
+--postInclude PyJobTransforms/UseFrontier.py  
 
 ## About SCT ROD id
 See  
